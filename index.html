@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Music PLayer</title>
     <link rel="stylesheet" href="/style.css">
 
     <script src="https://kit.fontawesome.com/0777db715b.js" crossorigin="anonymous"></script>
@@ -14,10 +14,10 @@
         <div class="music">
             <div class="music_player">
             <nav>
-                <div class="circle">
+                <div class="circle" onclick = "goToBack('left')">
                     <i class="fa-solid fa-angle-left"></i>
                 </div>
-                <div class="circle">
+                <div class="circle" onclick="goToBars('bars')">
                     <i class="fa-solid fa-bars"></i>
                 </div>
             </nav>
@@ -35,9 +35,10 @@
             <div class="controls">
                 <div><i class="fa-solid fa-backward-step"></i></div>
                 <div onclick="playPause()"><i class="fa-solid fa-play" id="controlIcon"></i></div>
-                <div onclick="nextSong()"><i class="fa-solid fa-forward-step" id="controlIcon"></i></div>
+                <div onclick="nextSong()"><i class="fa-solid fa-forward-step" id="forwardIcon"></i></div>
             </div>
             </div>
+
         </div>
     </div>
 
