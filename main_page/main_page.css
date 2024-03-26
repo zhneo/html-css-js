@@ -107,3 +107,68 @@ nav .circle{
     background: #fff;
     color: black;
 }
+
+.list{
+    display: flex;
+    gap: 20px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.music_playlist h4{
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: 650;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.music_playlist p{
+    color: #989898;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 500;
+    padding-top: -10px;
+}
+
+.item{
+    min-width: 120px;
+    width: 150px;
+    padding: 1px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all ease 0.4s;
+    background-color: #383737;
+}
+
+.item:hover{
+    background-color: #4f4d4d;
+}
+
+.item img{
+    width: 100%;
+    border-radius: 3px;
+    margin-bottom: 1px;
+}
+
+::-webkit-scrollbar{
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track{
+    background: #5e5e5e;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #707070;
+    border-radius: 8px;
+}
+
+.title_block{
+    text-align: left;
+    color: white;
+    margin-bottom: 15px;
+}
