@@ -22,11 +22,14 @@
                     <i class="fa-solid fa-bars"></i>
                 </div>
             </nav>
-            <img src="/img/Москва любит.png" class = "song_img" width="300" height="300">
-            <h1>Москва любит</h1>
-            <p>Скриптонит</p>
+            <img src="" class="song_img" id="song_img" width="300" height="300">
+            <div class="singer_title">
+                <h1 id="title"></h1>
+                <p id="artist"></p>
+            </div>
 
             <audio id="song">
+                <source src="/music/Скриптонит Привычка.mp3" type="audio/mpeg">
                 <source src="/music/Скриптонит - Москва Любит.mp3" type="audio/mpeg">
                 <source src="/music/ASAP Rocky feat. Skepta - Praise The Lord.mp3" type="audio/mpeg">
             </audio>
@@ -34,7 +37,7 @@
             <input type="range" value="0" id="progress">
 
             <div class="controls">
-                <div><i class="fa-solid fa-backward-step"></i></div>
+                <div onclick="backSong()"><i class="fa-solid fa-backward-step"></i></div>
                 <div onclick="playPause()"><i class="fa-solid fa-play" id="controlIcon"></i></div>
                 <div onclick="nextSong()"><i class="fa-solid fa-forward-step" id="forwardIcon"></i></div>
             </div>

@@ -1,11 +1,28 @@
 let progress = document.getElementById("progress");
 let song = document.getElementById("song");
 let controlIcon = document.getElementById("controlIcon");
-
-let forwardIcon = document.getElementById("forwardIcon");
 let currentSongIndex = 0;
 
-let musics =['/music/Скриптонит - Москва Любит.mp3' , '/music/ASAP Rocky feat. Skepta - Praise The Lord.mp3']
+let musics = [
+    {
+        url: '/music/Скриптонит Привычка.mp3',
+        artist: 'Скриптонит',
+        title: 'Привычка',
+        image: '/img/jah_khalib_ego.jpg'
+    },
+    {
+        url: '/music/Скриптонит - Москва Любит.mp3',
+        artist: 'Скриптонит',
+        title: 'Москва Любит',
+        image: '/img/Москва любит.png'
+    },
+    {
+        url: '/music/skriptonit-shug.mp3',
+        artist: 'Скриптонит',
+        title: 'Шуг',
+        image: '/img/Москва любит.png'
+    }
+];
 
 song.onloadedmetadata = function () {
     progress.max = song.duration;
@@ -13,46 +30,55 @@ song.onloadedmetadata = function () {
 };
 
 function playPause() {
-    if (controlIcon.classList.contains("fa-pause")) {
+    if (song.paused) {
+        song.play();
+        controlIcon.classList.remove("fa-play");
+        controlIcon.classList.add("fa-pause");
+    } else {
         song.pause();
         controlIcon.classList.remove("fa-pause");
         controlIcon.classList.add("fa-play");
-    } 
-    else {
-        song.play();
-        controlIcon.classList.add("fa-pause");
-        controlIcon.classList.remove("fa-play");
     }
 }
 
-if(song.play()){
-    setInterval(()=>{
-        progress.value = song.currentTime;    
-    } , 500);
-}
+setInterval(() => {
+    progress.value = song.currentTime;
+}, 500);
 
-function nextSong(){
+function nextSong() {
     currentSongIndex++;
-    if (currentSongIndex >= song.children.length) {
+    if (currentSongIndex >= musics.length) {
         currentSongIndex = 0;
     }
     switchSong(currentSongIndex);
 }
 
 function switchSong(index) {
-    song.children[index].selected = true;
-    song.load();
+    song.src = musics[index].url;
     song.play();
-    playIcon.classList.remove("fa-play");
-    playIcon.classList.add("fa-pause");
+    controlIcon.classList.remove("fa-play");
+    controlIcon.classList.add("fa-pause");
+
+    document.getElementById('song_img').src = musics[index].image;
+    document.getElementById('title').innerText = musics[index].title;
+    document.getElementById('artist').innerText = musics[index].artist;
 }
 
-progress.oninput = function() {
+progress.oninput = function () {
     song.currentTime = progress.value;
 }
 
-
-//кнопки назад и  меню
+function backSong() {
+    if (song.currentTime > 3) {
+        song.currentTime = 0;
+    } else {
+        currentSongIndex--;
+        if (currentSongIndex < 0) {
+            currentSongIndex = musics.length - 1;
+        }
+        switchSong(currentSongIndex);
+    }
+}
 
 function goToBack(icon) {
     if (icon === 'left') {
