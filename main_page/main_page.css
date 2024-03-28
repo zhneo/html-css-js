@@ -15,6 +15,10 @@
     flex-wrap: wrap;
 }
 
+.menu_title{
+    cursor: default;
+}
+
 .music_player{
     background:#444;
     width: 420px;
@@ -121,6 +125,7 @@ nav .circle{
     cursor: pointer;
     transition: all ease 0.4s;
     background-color: #383737;
+    margin-bottom: 5px;
 }
 
 .item:hover{
@@ -151,4 +156,5 @@ nav .circle{
     text-align: left;
     color: white;
     margin-bottom: 15px;
+    cursor: default;
 }
