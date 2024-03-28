@@ -8,7 +8,7 @@ let musics = [
         url: '/music/Скриптонит Привычка.mp3',
         artist: 'Скриптонит',
         title: 'Привычка',
-        image: '/img/jah_khalib_ego.jpg'
+        image: '/img/Москва любит.png'
     },
     {
         url: '/music/Скриптонит - Москва Любит.mp3',
