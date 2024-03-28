@@ -19,7 +19,7 @@
 .music_player{
     background:#444;
     width: 420px;
-    height: 800px;
+    height: 700px;
     padding: 25px 35px;
     text-align: center;
 }
@@ -136,11 +136,13 @@ nav .circle{
 .music_playlist li h5{
     color: white;
     font-size: 18px;
-    margin-left: 15px;
+    margin-left: 10px;
 }
 
-.music_playlist li h5 .subtitle{
+.subtitle{
+    display: flex;
+    align-items: center;
     font-size: 12px;
-    margin-left: 15px;
-    color: #b0b0b0;
+    margin-left: 10px;
+    color: #b0b0b0
 }
