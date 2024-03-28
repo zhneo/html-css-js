@@ -56,7 +56,7 @@ progress.oninput = function() {
 
 function goToBack(icon) {
     if (icon === 'left') {
-        window.location.href = '/main_page/main_menu.html';
+        window.location.href = '/playlist/2004/playlist_2004.html';
     }else if (icon === 'bars') {
         window.location.href = '#';
     }
